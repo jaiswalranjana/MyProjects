@@ -22,7 +22,9 @@ function App() {
      expenses={expenses} 
       setExpenses={setExpenses}
       />
-    <MonthlyTransactions expenses={expenses}/>
+    <MonthlyTransactions
+     expenses={expenses}
+     setExpenses={setExpenses}/>
     </>
   );
 }
