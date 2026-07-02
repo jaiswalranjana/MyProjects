@@ -7,9 +7,23 @@ function BudgetSummary({budget,expenses}){
     const remain=budget-spent;
     return (
         <>
-        <h3>Budget : &#8377; {budget}</h3>
-        <h3>Spent :&#8377;{spent} </h3>
-        <h3>Remaining : &#8377;{remain} </h3>
+        <div className="grid grid-cols-3 gap-4 my-8">
+            <div className="bg-blue-100 p-4 rounded-xl shadow">     
+        <h3 className="text-lg font-semibold">Budget</h3>
+        <p className="text-3xl font-bold text-blue-700"> &#8377; {budget}</p> 
+        </div>
+
+        <div className="bg-red-100 p-4 rounded-xl shadow">
+        <h3 className="text-lg font-semibold">Spent</h3>
+        <p className="text-3xl font-bold text-red-700">&#8377;{spent}</p>
+        </div>
+        <div className="bg-green-100 p-4 rounded-xl shadow">
+        <h3 className="text-lg font-semibold">Remaining </h3>
+        <p className="text-3xl font-bold text-green-700">
+         &#8377;{remain}
+         </p>
+        </div>
+        </div>
         </>
     );
 }

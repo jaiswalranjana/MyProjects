@@ -12,12 +12,13 @@ function SetBudget({setBudget}){
         setInputBudget("");
     }
     return (
-        <>
-        <form onSubmit={handleSubmit}>
-            <label>
-                Monthly Budget : 
-            </label>
+        <div>
+            <h2 className="text-xl font-bold mb-4">
+           Monthly Budget
+        </h2>
+        <form onSubmit={handleSubmit} className="flex items-center gap-4 mb-8">
             <input
+            className="border rounded-lg px-4 py-2"
              type="number"
              placeholder="enter amount"
               required
@@ -25,9 +26,12 @@ function SetBudget({setBudget}){
               onChange={(e)=>setInputBudget(e.target.value)}
               
               />
-          <button>Set Budget</button>
+          <button
+          className=" bg-indigo-600 text-white px-5 py-2 
+          rounded-lg font-semibold hover:bg-indigo-700 transition"
+          >Set Budget</button>
         </form>
-        </>
+        </div>
     );
 }
 

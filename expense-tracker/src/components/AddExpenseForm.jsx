@@ -32,9 +32,11 @@ function AddExpenseForm({expenses,setExpenses}){
     }
     
     return (
-    <>
-    <form onSubmit={handleAddExpense}>
-        <label>
+    <div className="mt-8">
+    <form onSubmit={handleAddExpense}
+    className="grid grid-cols-4 gap-8 items-end mt-10 mb-12">
+        <div>
+        <label className="block mb-2 font-medium" >
             Amount : 
         </label>
         <input 
@@ -42,15 +44,24 @@ function AddExpenseForm({expenses,setExpenses}){
          required
          value={amount}
          onChange={(e)=>setAmount(e.target.value)}
-         
+         className="border rounded-lg px-4 py-3 w-full" 
+         focus:outline-none
+         focus:ring-2
+         focus:ring-indigo-500
          />
-<label>
+         </div>
+         <div>
+<label className="block mb-2 font-medium">
     Category :
 </label>
         <select
          required
          value={category}
          onChange={(e)=>setCategory(e.target.value)}
+         className="border rounded-lg px-4 py-3 w-full"
+         focus:outline-none
+         focus:ring-2
+         focus:ring-indigo-500
          >
             <option value="">Select Category</option>
 <option>Food</option>
@@ -62,18 +73,29 @@ function AddExpenseForm({expenses,setExpenses}){
 <option>Health</option>
 <option>Other</option>
         </select>
-
-<label>
+</div>
+<div>
+<label className="block mb-2 font-medium">
     Description :
 </label>
-<textarea 
+<input
+type="text"
+placeholder="Description"
 value={description}
 onChange={(e)=>setDescription(e.target.value)}
+className="w-full border rounded-xl px-4 py-3 h-12 resize-none focus:outline-none focus:ring-2 focus:ring-indigo-500"
+focus:outline-none
+         focus:ring-2
+         focus:ring-indigo-500
 />
-
-<button type="submit">Add Expense</button>
+</div>
+<div>
+<button type="submit"
+ className="w-full bg-indigo-600 hover:bg-indigo-700 transition duration-300 text-white py-3 rounded-xl shadow-md font-semibold"
+ >Add Expense</button>
+ </div>
     </form>
-    </>
+    </div>
     );
 }
 

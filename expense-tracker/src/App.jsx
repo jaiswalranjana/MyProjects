@@ -50,6 +50,8 @@ function App() {
   
   return (
     <>
+    <div className="min-h-screen bg-gray-100 flex justify-center py-10">
+      <div className="w-full max-w-4xl bg-white rounded-xl shadow-lg p-8">
      <Navbar/> 
       <SetBudget setBudget={setBudget}/>
      <BudgetSummary
@@ -63,6 +65,8 @@ function App() {
     <MonthlyTransactions
      expenses={expenses}
      setExpenses={setExpenses}/>
+     </div>
+     </div>
     </>
   );
 }
